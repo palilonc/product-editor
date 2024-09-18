@@ -18,7 +18,8 @@ function loadProducts() {
                 `;
                 tableBody.appendChild(row);
             }
-        });
+        })
+        .catch(error => console.error('Błąd podczas ładowania produktów:', error));
 }
 
 function addProduct() {
@@ -67,7 +68,8 @@ function saveChanges() {
     .then(response => response.text())
     .then(text => {
         alert(text);
-    });
+    })
+    .catch(error => console.error('Błąd podczas zapisywania zmian:', error));
 }
 
 window.onload = loadProducts;

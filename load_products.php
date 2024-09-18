@@ -9,6 +9,9 @@ if (file_exists($filePath)) {
     if ($startPos !== false) {
         $startPos += strlen('### Dostępne produkty i ceny: ###');
         $endPos = strpos($content, '### Dodatkowe informacje ###', $startPos);
+        if ($endPos === false) {
+            $endPos = strlen($content); // Jeśli nie ma sekcji "Dodatkowe informacje", weź do końca pliku
+        }
         $productsSection = substr($content, $startPos, $endPos - $startPos);
         echo $productsSection;
     } else {
