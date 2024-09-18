@@ -1,5 +1,5 @@
 function loadProducts() {
-    fetch('process_message_code.txt')
+    fetch('load_products.php')
         .then(response => response.text())
         .then(text => {
             const regex = /- \*\*(.*?)\*\*: (.*?)\. Cena (.*?) zł\./g;
